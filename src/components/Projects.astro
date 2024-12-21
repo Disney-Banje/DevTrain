@@ -1,0 +1,19 @@
+---
+const { title, description, source, path } = Astro.props;
+---
+
+<a href={path} class="max-w-72 relative">
+    <div class="bg-black flex m-2 items-center gap-4 rounded-lg border-2 after:absolute after:left-4 after:top-4 after:rounded-lg after:-z-10 after:w-11/12 after:h-full after:border-2">
+         <div>
+            <ion-icon name="code-working-outline"></ion-icon>
+         </div>
+         <article>
+            <h2>{title}</h2>
+            <p>{description}</p>
+            <div>
+                <p>{source}</p>
+                <span>&#8599;</span>
+            </div>
+         </article>
+    </div>
+</a>
