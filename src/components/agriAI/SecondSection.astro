@@ -1,0 +1,134 @@
+---
+import Button from "./widgets/Button.astro";
+import NewsExtend from "./widgets/NewsExtend.astro";
+import NewsCompact from "./widgets/NewsCompact.astro";
+
+
+const newsExtendObject = [
+    {
+        image: "",
+        articleType: "Blog",
+        title: "Future-Proofing Your Greenhouse Operations Through Data",
+        desc: "Data is revolutionizing greenhouse operations, driving higher yields and efficiency. Discover how data-driven strategies can future-proof you...",
+        date: "18.07.2024"
+    },
+    {
+        image: "",
+        articleType: "Press Release",
+        title: "Source.ag Unveils Source APIs for Direct Data Exchange with Source.ag Solutions",
+        desc: "Enabling seamless and rapid data sharing between sensors and Source.",
+        date: "02.07.2024"
+    }
+];
+
+const newsCompactObject = [
+    {
+        cover: "",
+        articleType: "BOROW NEWS",
+        title: "Source.ag Launches Source APIs to Enhance Data Integration",
+        date: "02.07.2024"
+    },
+    {
+        cover: "",
+        articleType: "THE NEXT WEB",
+        title: "Dutch startup of the week: Source.ag",
+        date: "28.06.2024"
+    },
+    {
+        cover: "",
+        articleType: "BLOG",
+        title: "Revolutionizing Agriculture With Source Cultivate and Source...",
+        date: "27.06.2024"
+    },
+    {
+        cover: "",
+        articleType: "BOROW",
+        title: "Ridder and Source.ag Celebrate Successful Partnership",
+        date: "14.06.2024"
+    }
+];
+---
+
+<section>
+    <div>
+        <div>
+            <h2>What Growers Say</h2>
+            <article>
+                <section>
+                    <!-- Farmer image -->
+                </section>
+                <section>
+                    <div>
+                        <h3>Arus Biersteker</h3>
+                        <p>General Manager & Head Grower, C. Zwirkels</p>
+                    </div>
+                    <q>
+                        Relying on climate computers can be time-consuming, and junior growers may not have the experience to understand the root causes of problems. With Source, we can get a single overview of the state of our most important KPIs across all three of our greenhouses.
+                    </q>
+    
+                    <!-- add the LInk widget -->
+                </section>
+            </article>
+            <Button
+            title="All cases" />
+        </div>
+    
+        <div>
+            <h2>Driving Innovation Together</h2>
+            <p>We're proudly working with growers, cooperatives, greenhouse hardware providers, seed companies, and more.</p>
+            <ul>
+                <!-- generate icons with an AI tool -->
+            </ul>
+            <Button
+            title="See all partners" />
+        </div>
+    
+        <div>
+            <h2>The Latest Insights</h2>
+            <section>
+                <div>
+                    {
+                        newsExtendObject.map(news => (
+                            <NewsExtend
+                            title={news.title}
+                            desc={news.desc}
+                            date={news.date}
+                            articleType={news.articleType}
+                            image={news.image} 
+                            />
+                        ))
+                    }
+                </div>
+                <div>
+                    {
+                        newsCompactObject.map(news => (
+                            <NewsCompact
+                            articleType={news.articleType}
+                            title={news.title}
+                            date={news.date}
+                            cover={news.cover}
+                             />
+                        ))
+                    }
+                </div>
+            </section>
+            <Button
+            title="Read more" 
+            />
+        </div>
+    
+        <div>
+            <section>
+                <article>
+                    <h2>Scale Your Greenhouse Operations</h2>
+                    <p>Discover how Source can help you optimize your business results.</p>
+                    <Button
+                    title="Request demo" />
+                </article>
+            </section>
+            <section>
+                <!-- art direction -->
+            </section>
+        </div>
+    </div>
+</section>

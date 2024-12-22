@@ -1,0 +1,136 @@
+---
+import Button from "./widgets/Button.astro";
+
+const pros = [
+    {
+        title: "Maximize Your Profit",
+        description: "Optimal results with AI-powered crop predictions: enhance resource efficienc and strengthen your price negotiations."
+    },
+    {
+        title: "Lower Risks",
+        description: "Lower your risks by using detailed analytics to improve your strategies and make sound decisions based on data."
+    },
+    {
+        title: "Scale Your Operations",
+        description: "Efficiently scale and optimize operations, through precise greenhouse environmental control."
+    }
+];
+
+const aboutUs = [
+    {
+        art: "", // this is for the image that illustrates the details
+        header: "Working in",
+        subHead: 'Available worldwide, we\'re currently active in 15 countries.',
+        data: 280,
+        dataTitle: "Greenhouses",
+        flip: false
+    },
+    {
+        art: "", // this is for the image that illustrates the details
+        header: "Managing",
+        subHead: 'We\'re already helping to manage hundreds of hectares.',
+        data: 180,
+        dataTitle: "Hectares",
+        flip: true
+    },
+    {
+        art: "", // this is for the image that illustrates the details
+        header: "Supported by over",
+        subHead: 'Our passionate team is constantly expanding.',
+        data: 100,
+        dataTitle: "Employees",
+        flip: false
+    }
+];
+
+const solutions = [
+    {
+        title: "Track",
+        description: "Digitize your operation. Track everything that makes or breaks a cultivation allowing you to make informed decisions, adapt to changing conditions, & share information across facilities."
+    },
+    {
+        title: "Cultivate",
+        description: "Harvest predicitions and cultivation simulations improve the understanding of potential yield, enabling streamlined operations & boosting revenue potential."
+    },
+    {
+        title: "Control",
+        description: "Perfect irrigation execution every time. With irrigation control, you'll be able to predict and execute your optimal irrigation strategy."
+    }
+];
+---
+
+<section>
+    <div>
+        <div>
+            {pros.map(pro => (
+                <article>
+                    <h2>{pro.title}</h2>
+                    <p>{pro.description}</p>
+                </article>
+            ))}
+        </div>
+        <div>
+            {aboutUs.map(about => (
+                <article class={about.flip ? 'flex flex-col-reverse' : 'flex flex-col'}>
+                    <div>{about.art}</div>
+                    <section>
+                        <h3>{about.header}</h3>
+                        <p>{about.subHead}</p>
+                        <div>
+                            <p>{about.data}</p>
+                            <p>{about.dataTitle}</p>
+                        </div>
+                    </section>
+                </article>
+            ))}
+        </div>
+        <div>
+            <section>
+                <h2>Our Solutions</h2>
+                <p>
+                    We understand the unique challenges faced by growers. Our AI-driven solutions bring standardization and help to enhance your greenhouse productivity while supporting autonomous execution.
+                </p>
+                <Button
+                title="Learn more"
+                color="white"
+                 />
+            </section>
+            <section>
+                <article>
+                    <section>
+                        <div>
+                            <p>Source</p>
+                            <h3>{solutions[0].title}</h3>
+                        </div>
+                    </section>
+                    <section>
+                        <p>{solutions[0].description}</p>
+                    </section>
+                    <div>Including Plant App</div>
+                </article>
+                <article>
+                    <section>
+                        <div>
+                            <p>Source</p>
+                            <h3>{solutions[1].title}</h3>
+                        </div>
+                    </section>
+                    <section>
+                        <p>{solutions[1].description}</p>
+                    </section>
+                </article>
+                <article>
+                    <section>
+                        <div>
+                            <p>Source</p>
+                            <h3>{solutions[2].title}</h3>
+                        </div>
+                    </section>
+                    <section>
+                        <p>{solutions[2].description}</p>
+                    </section>
+                </article>
+            </section>
+        </div>
+    </div>
+</section>

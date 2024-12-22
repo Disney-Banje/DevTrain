@@ -1,7 +1,20 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Header from "../components/agriAI/Header.astro";
+import Hero from "../components/agriAI/Hero.astro";
+import FirstSection from "../components/agriAI/FirstSection.astro";
+import SecondSection from "../components/agriAI/SecondSection.astro";
+import ThirdSection from "../components/agriAI/ThirdSection.astro";
 ---
 
 <Layout> 
-    <h1>This path is for agriAI culture..</h1>
+    <Header />
+    <main>
+        <Hero />
+        <FirstSection />
+        <SecondSection />
+    </main>
+    <footer>
+        <ThirdSection />
+    </footer>
 </Layout>

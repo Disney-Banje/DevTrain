@@ -1,0 +1,14 @@
+---
+const { articleType, title, date, cover } = Astro.props;
+---
+
+<a href="#">
+    <section>
+        <img src={cover} alt="">
+    </section>
+    <section>
+        <p>{articleType}</p>
+        <h3>{title}</h3>
+        <p>{date}</p>
+    </section>
+</a>

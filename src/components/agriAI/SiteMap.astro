@@ -1,0 +1,47 @@
+---
+const siteMap = [
+    {
+        title: "Source.ag",
+        pageLink: [
+            "About Us",
+            "Vision",
+            "Partners",
+            "Careers"
+        ]
+    },
+    {
+        title: "Solutions",
+        pageLink: [
+            "Source Track",
+            "Source Cultivate",
+            "Source Control",
+            "Source Plant App",
+            "Source APIs"
+        ]
+    },
+    {
+        title: "Other",
+        pageLink: [
+            "Cases",
+            "News",
+            "FAQ",
+            "Press Kit"
+        ]
+    }
+]
+---
+
+<div>
+    {siteMap.map(site => (
+        <div>
+            <p>{site.title}</p>
+            <ul>
+                {site.pageLink.map(page => (
+                    <li>
+                        <a href="#">{page}</a>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    ))}
+</div>
